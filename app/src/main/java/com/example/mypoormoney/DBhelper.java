@@ -15,10 +15,10 @@ public class DBhelper extends SQLiteOpenHelper {
     {
         String q="CREATE TABLE "+DatabaseStrings.TBL_NAME+
                 " ( _id INTEGER PRIMARY KEY AUTOINCREMENT," +
-                DatabaseStrings.FIELD_DATE +" TEXT," +
-                DatabaseStrings.FIELD_IN + "TEXT," +
-                DatabaseStrings.FIELD_OUT + " TEXT," +
-                DatabaseStrings.FIELD_OPER + " TEXT)";
+                DatabaseStrings.FIELD_DATE+" TEXT," +
+                DatabaseStrings.FIELD_IN+" TEXT," +
+                DatabaseStrings.FIELD_OUT+" TEXT," +
+                DatabaseStrings.FIELD_OPER+" TEXT)";
         db.execSQL(q);
     }
     @Override
