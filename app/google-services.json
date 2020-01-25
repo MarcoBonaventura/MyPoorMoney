@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "770970924927",
+    "firebase_url": "https://mypoormoney.firebaseio.com",
+    "project_id": "mypoormoney",
+    "storage_bucket": "mypoormoney.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:770970924927:android:7f6202a3b23a7d90148c4a",
+        "android_client_info": {
+          "package_name": "com.example.mypoormoney"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "770970924927-27ob3u1t8q5e0m12hii3artthavsk6je.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBwA7fwYwxv2QC6FC9Rye5uO3Zwx1s7nQ4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "770970924927-27ob3u1t8q5e0m12hii3artthavsk6je.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

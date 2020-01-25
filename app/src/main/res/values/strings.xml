@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">MyPoorMoney</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="STR_ButtonSaldo">Saldo</string>
+    <string name="STR_ButtonEntrate">Entrate</string>
+    <string name="STR_ButtonUscite">Uscite</string>
+    <string name="STR_TitleName">My Poor Money!</string>
+    <string name="edit_message">scrivi qualcossa</string>
+    <string name="BTN_Send">Send</string>
+    <string name="salva">salva</string>
+    <string name="btn_delete" />
+    <string name="txt_oper">operazione</string>
+    <string name="txt_date">01/01/2020</string>
+    <string name="txt_in">00000</string>
+    <string name="txt_out">00000</string>
+</resources>
