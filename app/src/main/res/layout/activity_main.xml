@@ -7,6 +7,21 @@
     android:layout_height="match_parent"
     android:paddingTop="?attr/actionBarSize">
 
+
+    <Button
+        android:id="@+id/btn_date"
+        android:layout_width="88dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="data"
+        app:layout_constraintBottom_toTopOf="@+id/etxt_in"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+
     <Button
         android:id="@+id/buttonEntrate"
         android:layout_width="100dp"
@@ -60,25 +75,25 @@
         android:layout_height="35dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_marginTop="8dp"
+        android:focusable="auto"
         android:importantForAutofill="no"
         android:inputType="date"
         android:text="@string/txt_date"
         android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_date"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/etxt_in"
         android:layout_width="0dp"
-        android:layout_height="35dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
+        android:focusable="auto"
         android:inputType="@string/txt_in"
         android:text="@string/txt_in"
         android:textSize="12sp"
@@ -96,6 +111,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
+        android:focusable="auto"
         android:inputType="@string/txt_out"
         android:text="@string/txt_out"
         android:textSize="12sp"
@@ -112,6 +128,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
+        android:focusable="auto"
         android:text="@string/txt_oper"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"

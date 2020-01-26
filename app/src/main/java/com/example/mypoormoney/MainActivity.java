@@ -2,9 +2,9 @@ package com.example.mypoormoney;
 
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
+import android.view.View.OnClickListener;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.View.OnClickListener;
 import android.widget.CursorAdapter;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -12,29 +12,37 @@ import android.widget.ListView;
 import android.widget.ImageButton;
 import android.database.Cursor;
 import android.content.Context;
+import android.app.DatePickerDialog;
+import android.widget.DatePicker;
+import android.widget.Button;
+import android.icu.util.Calendar;
 
-public class MainActivity extends AppCompatActivity {
+
+
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     public static final String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
 
     private DbManager db = null;
     private CursorAdapter adapter;
     private ListView listview = null;
-    private OnClickListener clickListener = new View.OnClickListener() {
-        @Override
-        public void onClick(View v)
-        {
-            int position = listview.getPositionForView(v);
-            long id = adapter.getItemId(position);
-            if (db.delete(id))
-                adapter.changeCursor(db.query());
-        }
-    };
+
+    private int mYear;
+    private int mMonth;
+    private int mDay;
+
+    Button btnDatePicker;
+    EditText txtDate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+        btnDatePicker = (Button)findViewById(R.id.btn_date);
+        txtDate = (EditText)findViewById(R.id.etxt_data);
+        btnDatePicker.setOnClickListener(this);
 
         db = new DbManager(this);
         listview = (ListView) findViewById(R.id.listview);
@@ -80,6 +88,50 @@ public class MainActivity extends AppCompatActivity {
         listview.setAdapter(adapter);
     }
 
+    private OnClickListener clickListener = new View.OnClickListener() {
+
+
+
+        @Override
+        public void onClick(View v) {
+
+            int position = listview.getPositionForView(v);
+            long id = adapter.getItemId(position);
+            if (db.delete(id))
+                adapter.changeCursor(db.query());
+
+
+
+        }
+    };
+
+    @Override
+    public void onClick(View v) {
+
+        if (v == btnDatePicker) {
+
+            // Get Current Date
+            final Calendar c = Calendar.getInstance();
+            mYear = c.get(Calendar.YEAR);
+            mMonth = c.get(Calendar.MONTH);
+            mDay = c.get(Calendar.DAY_OF_MONTH);
+
+
+            DatePickerDialog datePickerDialog = new DatePickerDialog(this,
+                    new DatePickerDialog.OnDateSetListener() {
+
+                        @Override
+                        public void onDateSet(DatePicker view, int year,
+                                              int monthOfYear, int dayOfMonth) {
+
+                            txtDate.setText(dayOfMonth + "-" + (monthOfYear + 1) + "-" + year);
+
+                        }
+                    }, mYear, mMonth, mDay);
+            datePickerDialog.show();
+        }
+    }
+
     public void salva(View v) {
         EditText data = (EditText) findViewById(R.id.etxt_data);
         EditText in = (EditText) findViewById(R.id.etxt_in);
@@ -91,6 +143,9 @@ public class MainActivity extends AppCompatActivity {
             adapter.changeCursor(db.query());
         }
     }
+
+
+
 
     /*
     public void sendMessage(View view) {
@@ -107,3 +162,5 @@ public class MainActivity extends AppCompatActivity {
 
 
 }
+
+
